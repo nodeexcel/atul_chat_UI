@@ -48,15 +48,16 @@ const AIProcess = () => {
                 <div className="flex  justify-between">
                     {/* Step 1 - Active */}
                     <div className="relative flex items-center w-full">
-                        <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-5 py-1 rounded-xl text-sm">
+                        <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-5 py-1 rounded-xl text-sm whitespace-nowrap">
                             Step 1
+
                         </div>
                         <div className="w-full h-1 bg-gray-600"></div>
                     </div>
 
                     {/* Step 2 */}
                     <div className="relative flex items-center w-full">
-                        <div className="bg-[#241A3D] text-gray-400 px-5 py-1 rounded-xl text-sm">
+                        <div className="bg-[#241A3D] text-gray-400 px-5 py-1 rounded-xl text-sm whitespace-nowrap">
                             Step 2
                         </div>
                         <div className="w-full h-1 bg-gray-600"></div>
@@ -64,7 +65,7 @@ const AIProcess = () => {
 
                     {/* Step 3 */}
                     <div className="relative flex items-center w-full">
-                        <div className="bg-[#241A3D] text-gray-400 px-5 py-1 rounded-xl text-sm">
+                        <div className="bg-[#241A3D] text-gray-400 px-5 py-1 rounded-xl text-sm whitespace-nowrap">
                             Step 3
                         </div>
                         <div className="w-full h-1 bg-gray-600"></div>
@@ -72,7 +73,7 @@ const AIProcess = () => {
 
                     {/* Step 4 */}
                     <div className="relative flex items-center">
-                        <div className="bg-[#241A3D] text-gray-400 px-5 py-1 rounded-xl text-sm">
+                        <div className="bg-[#241A3D] text-gray-400 px-5 py-1 rounded-xl text-sm whitespace-nowrap">
                             Step 4
                         </div>
                     </div>
