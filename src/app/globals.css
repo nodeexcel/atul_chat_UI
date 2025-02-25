@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: var(--foreground);
+  font-family: "Space Grotesk", sans-serif;
+  background: rgba(1, 15, 49, 1);
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(105.14deg, #0146f8 5.34%, #962eb9 110.11%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-background {
+  background: linear-gradient(105.14deg, #0146f8 5.34%, #962eb9 110.11%);
+}
+
+.gradient-border {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: black;
+  /* Background for the inner content */
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  /* Border thickness */
+  border-radius: 8px;
+  /* Same as the parent */
+  background: linear-gradient(105.14deg, #0146f8 5.34%, #962eb9 110.11%);
+  -webkit-mask: linear-gradient(white 0 0) content-box,
+    linear-gradient(white 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+
+.text-color {
+  background: linear-gradient(105.14deg, #010f34 5.34%, #962eb9 110.11%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Font/Font-Family/Secondary Font-Family;
+  font-weight: 500;
+  font-size: Font/Font Size/Body;
+  line-height: 21.6px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 10s linear infinite;
+}
+
+.group:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+.glow-animation {
+  animation: glow 2s infinite ease-in-out;
+  filter: blur(3px);
+}
