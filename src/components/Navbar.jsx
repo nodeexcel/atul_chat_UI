@@ -22,7 +22,7 @@ const Navbar = () => {
                     <li className="cursor-pointer   hover:text-purple-600" onClick={() => scrollToSection("insights")}>AI Insights</li>
                     <li className="cursor-pointer   hover:text-purple-600" onClick={() => scrollToSection("services")}>Services</li>
                     <li className="cursor-pointer   hover:text-purple-600" onClick={() => scrollToSection("blog")}>Blog</li>
-                    <li className="cursor-pointer   hover:text-purple-600" onClick={() => scrollToSection("about")} >ABOUT US</li>
+                    <li className="cursor-pointer   hover:text-purple-600" onClick={() => scrollToSection("about")} >About Us</li>
                     <li className="cursor-pointer   hover:text-purple-600" onClick={() => scrollToSection("contact")}>Contact</li>
                 </ul>
                 <button style={{

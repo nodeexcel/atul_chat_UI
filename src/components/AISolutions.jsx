@@ -53,7 +53,7 @@ export default function AiSolutions() {
                     {solutions.map((solution, index) => (
                         <div
                             key={index}
-                            className="bg-[#10162F] border border-gray-700 rounded-xl shadow-lg p-3 text-white relative hover:shadow-2xl transition duration-300"
+                            className="bg-[#10162F] border border-gray-700 rounded-xl shadow-lg p-3 text-white relative hover:shadow-2xl transition duration-300 flex flex-col"
                         >
                             <div className="w-full h-40 overflow-hidden rounded-lg mb-4">
                                 <Image
@@ -67,17 +67,19 @@ export default function AiSolutions() {
                             <div className="flex gap-2">
                                 <Image
                                     src={solution.iconImg}
-                                    alt={""}
+                                    alt=""
                                     className="object-contain"
                                 />
                                 <h3 className="text-lg font-semibold">{solution.title}</h3>
                             </div>
-                            <p className="text-gray-300 text-sm mt-2">{solution.description}</p>
-                            <button className="mt-4 gradient-background text-white py-2 px-4 rounded-lg  flex items-center gap-2 ">
-                                Free Consultation <ChevronRight size={20} />
-                            </button>
-
+                            <p className="text-gray-300 text-sm mt-2 flex-grow mb-5">{solution.description}</p>
+                            <div>
+                                <button className="mt-auto gradient-background text-white py-2 px-4 rounded-lg flex items-center gap-2">
+                                    Free Consultation <ChevronRight size={20} />
+                                </button>
+                            </div>
                         </div>
+
                     ))}
                 </div>
             </div>
