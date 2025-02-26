@@ -9,7 +9,6 @@ import LeadingPlatforms from './LeadingPlatform';
 import ClientSuccessStories from './ClientSuccessStories';
 import TransformedBusiness from './TransformedBusiness';
 import WaveXAI from './WhyWaveX';
-// import AIIndustrySolutions from './AiIndustriesSolutions';
 
 const DashboardPage = () => {
     return (
@@ -24,7 +23,6 @@ const DashboardPage = () => {
             <ClientSuccessStories />
             <TransformedBusiness />
             <WaveXAI />
-            {/* <AIIndustrySolutions /> */}
         </>
     )
 }
