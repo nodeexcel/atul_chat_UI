@@ -90,3 +90,12 @@ body {
   animation: glow 2s infinite ease-in-out;
   filter: blur(3px);
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

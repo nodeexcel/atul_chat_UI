@@ -45,7 +45,7 @@ const solutions = [
 export default function AiSolutions() {
     return (
         <section>
-            <div className=" mx-auto px-6 mb-40">
+            <div className=" mx-auto px-6 ">
                 <h2 className="gradient-text text-[40px] md:text-[56px] font-bold leading-[64.8px] text-center font-space-grotesk mb-5">
                     Our AI Solutions
                 </h2>
@@ -55,7 +55,7 @@ export default function AiSolutions() {
                             key={index}
                             className="bg-[#10162F] border border-gray-700 rounded-xl shadow-lg p-3 text-white relative hover:shadow-2xl transition duration-300 flex flex-col"
                         >
-                            <div className="w-full h-40 overflow-hidden rounded-lg mb-4">
+                            <div className="w-full h-44 overflow-hidden rounded-lg mb-4">
                                 <Image
                                     src={solution.img}
                                     alt={solution.title}

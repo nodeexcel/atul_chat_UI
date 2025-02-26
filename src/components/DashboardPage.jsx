@@ -4,6 +4,12 @@ import AboutUs from "./AbouScreen";
 import AIProcess from './AIProcess';
 import AiSolutions from './AISolutions';
 import AISolutionsDesign from './AISolutionsDesign';
+import ExpertiseTech from './ExpertiseTechnologies';
+import LeadingPlatforms from './LeadingPlatform';
+import ClientSuccessStories from './ClientSuccessStories';
+import TransformedBusiness from './TransformedBusiness';
+import WaveXAI from './WhyWaveX';
+// import AIIndustrySolutions from './AiIndustriesSolutions';
 
 const DashboardPage = () => {
     return (
@@ -12,7 +18,13 @@ const DashboardPage = () => {
             <AIProcess />
             <AboutUs />
             <AiSolutions />
-            {/* <AISolutionsDesign /> */}
+            <AISolutionsDesign />
+            <ExpertiseTech />
+            <LeadingPlatforms />
+            <ClientSuccessStories />
+            <TransformedBusiness />
+            <WaveXAI />
+            {/* <AIIndustrySolutions /> */}
         </>
     )
 }
