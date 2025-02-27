@@ -18,7 +18,7 @@ import Gemini from "../assets/expertiseTech/Gemini1.png";
 import Meta from "../assets/expertiseTech/meta.png";
 import Zapier from "../assets/expertiseTech/zapier1.png";
 import Make from "../assets/expertiseTech/Make.svg";
-import LeChat from "../assets/expertiseTech/Lechat.svg";
+import LeChat from "../assets/expertiseTech/LeChat.svg";
 import Huggingchat from "../assets/expertiseTech/HuggingChat.svg";
 import Kimi from "../assets/expertiseTech/kimi.svg";
 
