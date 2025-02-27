@@ -1,5 +1,5 @@
 import Image from "next/image";
-import AIImg from "../assets/whyWaveAi.svg";
+import AIImg from "../assets/whyWaveAI.svg";
 import Star1 from "../assets/AboutUs/Star1.png";
 import Star2 from "../assets/AboutUs/Star2.png";
 
