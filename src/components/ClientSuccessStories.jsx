@@ -60,7 +60,7 @@ export default function ClientSuccessStories() {
                 </h2>
                 <div className="relative max-w-3xl w-full">
                     <motion.div
-                        className="absolute left-4 w-1 bg-gradient-to-b from-purple-300 to-purple-500"
+                        className="absolute left-4 w-1 bg-gradient-to-b from-purple-300 to-purple-500 "
                         initial={{ height: 0 }}
                         animate={{ height: `${successStories.length * 125}px` }}
                         transition={{ duration: 1.5, ease: 'easeInOut' }}
@@ -74,7 +74,7 @@ export default function ClientSuccessStories() {
                             transition={{ delay: index * 0.5, duration: 0.6 }}
                         >
                             <motion.div
-                                className="relative w-6 h-6 bg-purple-600 border-0 rounded-full z-10 md:w-8 md:h-8"
+                                className="relative w-6 h-6 bg-purple-600 border-0 rounded-full z-10 md:w-8 md:h-8 "
                                 initial={{ scale: 0 }}
                                 animate={{ scale: 1 }}
                                 transition={{ delay: index * 0.5, duration: 0.6 }}

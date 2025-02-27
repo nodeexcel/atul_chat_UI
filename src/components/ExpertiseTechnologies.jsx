@@ -14,11 +14,11 @@ import openai from "../assets/expertiseTech/openai.svg";
 
 //second row images
 import Copilot from "../assets/expertiseTech/Copilot.svg";
-import Gemini from "../assets/expertiseTech/gemini1.png";
+import Gemini from "../assets/expertiseTech/Gemini1.png";
 import Meta from "../assets/expertiseTech/meta.png";
 import Zapier from "../assets/expertiseTech/zapier1.png";
 import Make from "../assets/expertiseTech/Make.svg";
-import LeChat from "../assets/expertiseTech/LeChat.svg";
+import LeChat from "../assets/expertiseTech/Lechat.svg";
 import Huggingchat from "../assets/expertiseTech/HuggingChat.svg";
 import Kimi from "../assets/expertiseTech/kimi.svg";
 
@@ -29,8 +29,14 @@ const techsLine1 = [
     { name: "Claude", logo: claude },
     { name: "Python", logo: python },
     { name: "Open Ai", logo: openai },
-    { name: "", logo: Abacus, },
-    { name: "", logo: perplexity },
+    { name: "Chat Gpt", logo: chatgpt },
+    { name: "you.com", logo: youcom },
+    { name: "Grok Ai", logo: GrokAi },
+    { name: "Claude", logo: claude },
+    { name: "Python", logo: python },
+    { name: "Open Ai", logo: openai },
+    // { name: "", logo: Abacus, },
+    // { name: "", logo: perplexity },
 ];
 
 const techsLine2 = [
@@ -39,9 +45,14 @@ const techsLine2 = [
     { name: "Make", logo: Make },
     { name: "Le Chat", logo: LeChat },
     { name: "Hugging Chat", logo: Huggingchat },
-    { name: "", logo: Kimi },
-    { name: "", logo: Gemini },
-    { name: "", logo: Zapier },
+    { name: "Copilot", logo: Copilot },
+    { name: "Meta", logo: Meta, size: "28px" },
+    { name: "Make", logo: Make },
+    { name: "Le Chat", logo: LeChat },
+    { name: "Hugging Chat", logo: Huggingchat },
+    // { name: "", logo: Kimi },
+    // { name: "", logo: Gemini },
+    // { name: "", logo: Zapier },
 
 
 ];
@@ -98,7 +109,7 @@ export default function ExpertiseTech() {
                             className="flex flex-row items-center snap-center p-2 h-9 justify-center gap-1 w-[107px]"
                         >
                             <Image src={tech.logo} alt={tech.name} style={{ height: tech.size }} />
-                            <span className="text-lg mt-2">{tech.name}</span>
+                            <span className="text-[1rem] mt-2">{tech.name}</span>
                         </div>
                     ))}
                 </div>

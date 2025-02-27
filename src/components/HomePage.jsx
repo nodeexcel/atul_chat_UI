@@ -1,7 +1,12 @@
+'use client'
+import { useState } from "react";
 import Image from "next/image";
 import GroupStar from "../assets/HomePage/GroupStar.png";
+import BrushAI from "../assets/brushAI.svg";
 
 const HomePage = () => {
+    const [websiteUrl, setWebsiteUrl] = useState("");
+
     return (
         < div className="pt-10" id="home" style={{ background: 'rgba(1, 15, 49, 1)' }}>
             <div className="flex flex-col items-center text-center">
@@ -22,15 +27,23 @@ const HomePage = () => {
                 </p>
 
                 <div className="flex items-center justify-center gap-4 w-full mt-4">
-                    <div className="gradient-border rounded-lg overflow-hidden w-full max-w-md h-[48px]">
-                        <input
-                            type="text"
-                            placeholder="Paste Your Website URL"
-                            className=" flex-1 outline-none w-full bg-black"
-                        />
-                    </div>
-                    <button className="gradient-background text-white px-6 py-2 hover:bg-purple-700 w-[130px] h-[48px] border rounded-lg">
-                        Generate
+                    <input
+                        type="text"
+                        placeholder="Paste Your Website URL"
+                        className="border-2  overflow-hidden w-full max-w-md h-[48px] flex items-center px-4 bg-black relative text-white"
+                        value={websiteUrl}
+                        onChange={(e) => {
+                            setWebsiteUrl(e.target.value);
+                            console.log(e.target.value, "88");
+                        }}
+                        style={{
+                            borderImage: "linear-gradient(105.14deg, #0146F8 5.34%, #962EB9 110.11%) 1",
+                            borderImageSlice: 1,
+                        }}
+
+                    />
+                    <button className="gradient-background text-white px-6 py-2 hover:bg-purple-700 w-[130px] h-[48px] border rounded-lg flex gap-1 items-center">
+                        Generate <Image src={BrushAI} alt={"Brush ai"} />
                     </button>
                 </div>
 
