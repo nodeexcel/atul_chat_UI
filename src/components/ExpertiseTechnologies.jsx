@@ -14,7 +14,7 @@ import openai from "../assets/expertiseTech/openai.svg";
 
 //second row images
 import Copilot from "../assets/expertiseTech/Copilot.svg";
-import Gemini from "../assets/expertiseTech/Gemini1.png";
+import Gemini from "../assets/expertiseTech/gemini1.png";
 import Meta from "../assets/expertiseTech/meta.png";
 import Zapier from "../assets/expertiseTech/zapier1.png";
 import Make from "../assets/expertiseTech/Make.svg";
