@@ -6,21 +6,16 @@ import Rightic from "../assets/AIProcess/Rightic.png";
 import chatgpt from "../assets/expertiseTech/Chatgpt1.svg";
 import youcom from "../assets/expertiseTech/youcom.svg";
 import GrokAi from "../assets/expertiseTech/Frame.svg";
-import Abacus from "../assets/expertiseTech/4.png";
-import perplexity from "../assets/expertiseTech/5.png";
 import claude from "../assets/expertiseTech/claude.svg";
 import python from "../assets/expertiseTech/python.svg";
 import openai from "../assets/expertiseTech/openai.svg";
 
 //second row images
 import Copilot from "../assets/expertiseTech/Copilot.svg";
-import Gemini from "../assets/expertiseTech/Gemini1.png";
 import Meta from "../assets/expertiseTech/meta.png";
-import Zapier from "../assets/expertiseTech/zapier1.png";
 import Make from "../assets/expertiseTech/Make.svg";
-import LeChat from "../assets/expertiseTech/Lechat.svg";
+import LeChat from "../assets/expertiseTech/LeChat.svg";
 import Huggingchat from "../assets/expertiseTech/HuggingChat.svg";
-import Kimi from "../assets/expertiseTech/kimi.svg";
 
 const techsLine1 = [
     { name: "Chat Gpt", logo: chatgpt },
@@ -35,8 +30,6 @@ const techsLine1 = [
     { name: "Claude", logo: claude },
     { name: "Python", logo: python },
     { name: "Open Ai", logo: openai },
-    // { name: "", logo: Abacus, },
-    // { name: "", logo: perplexity },
 ];
 
 const techsLine2 = [
@@ -50,9 +43,6 @@ const techsLine2 = [
     { name: "Make", logo: Make },
     { name: "Le Chat", logo: LeChat },
     { name: "Hugging Chat", logo: Huggingchat },
-    // { name: "", logo: Kimi },
-    // { name: "", logo: Gemini },
-    // { name: "", logo: Zapier },
 
 
 ];
