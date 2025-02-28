@@ -3,6 +3,7 @@ import { useState } from "react";
 import { ChevronRight, Menu, X, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import headerIcon from "../assets/headerIcon.svg"
+import websiteLogo from "../assets/websiteLogo.svg";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -25,8 +26,7 @@ const Navbar = () => {
 
             <nav className="w-full flex justify-between items-center py-4 h-[93px]">
                 <div className="flex justify-center items-center gap-3">
-                    <Image src={headerIcon} />
-                    <h1 className="gradient-text text-xl font-bold">WaveX AI</h1>
+                    <Image src={websiteLogo} style={{height:"72px", width:"auto"}}/>
                 </div>
 
 

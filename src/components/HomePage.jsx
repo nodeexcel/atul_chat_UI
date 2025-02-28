@@ -3,9 +3,24 @@ import { useState } from "react";
 import Image from "next/image";
 import GroupStar from "../assets/HomePage/GroupStar.png";
 import BrushAI from "../assets/brushAI.svg";
+import QueryModal from "./QueryAIModal";
+import { fetchResponse } from "@/apis/api";
 
 const HomePage = () => {
     const [websiteUrl, setWebsiteUrl] = useState("");
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleSend = async () => {
+        if (!websiteUrl.trim()) return;
+        const result = await fetchResponse(websiteUrl);
+        if(result?.response){
+            setIsOpen(true);
+
+        }
+        
+
+        
+      };
 
     return (
         < div className="pt-10" id="home" style={{ background: 'rgba(1, 15, 49, 1)' }}>
@@ -34,7 +49,6 @@ const HomePage = () => {
                         value={websiteUrl}
                         onChange={(e) => {
                             setWebsiteUrl(e.target.value);
-                            console.log(e.target.value, "88");
                         }}
                         style={{
                             borderImage: "linear-gradient(105.14deg, #0146F8 5.34%, #962EB9 110.11%) 1",
@@ -42,13 +56,13 @@ const HomePage = () => {
                         }}
 
                     />
-                    <button className="gradient-background text-white px-6 py-2 hover:bg-purple-700 w-[130px] h-[48px] border rounded-lg flex gap-1 items-center">
+                    <button  onClick={handleSend} className="gradient-background text-white px-6 py-2 hover:bg-purple-700 w-[130px] h-[48px] border rounded-lg flex gap-1 items-center">
                         Generate <Image src={BrushAI} alt={"Brush ai"} />
                     </button>
                 </div>
 
             </div>
-
+            <QueryModal isOpen={isOpen} setIsOpen={setIsOpen} /> {/* Modal */}
             {/* Testimonials */}
             <div className="mt-4 text-gray-700">
                 <p className=" text-[#999999] text-center">From Ideas to Insights: Enabling Scientific Discovery and Innovation.</p>
