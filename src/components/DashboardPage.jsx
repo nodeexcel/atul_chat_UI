@@ -1,4 +1,5 @@
 import React from 'react';
+import AnimatedSection from './animatedWrapper/AnimatedWrapper';
 import HomePage from "./HomePage";
 import AboutUs from "./AbouScreen";
 import AIProcess from './AIProcess';
@@ -17,20 +18,22 @@ const DashboardPage = () => {
     return (
         <>
             <HomePage />
-            <AIProcess />
-            <AboutUs />
-            <AiSolutions />
-            <AISolutionsDesign />
-            <ExpertiseTech />
-            <LeadingPlatforms />
-            <ClientSuccessStories />
-            <TransformedBusiness />
-            <WaveXAI />
-            <AIIndustrySolutions />
-            <AITransformSection />
+
+            <AnimatedSection><ExpertiseTech /></AnimatedSection>
+            <AnimatedSection><AIProcess /></AnimatedSection>
+            <AnimatedSection><AboutUs /></AnimatedSection>
+            <AnimatedSection><AiSolutions /></AnimatedSection>
+            <AnimatedSection><AISolutionsDesign /></AnimatedSection>
+            <AnimatedSection><LeadingPlatforms /></AnimatedSection>
+            <AnimatedSection><ClientSuccessStories /></AnimatedSection>
+            <AnimatedSection><WaveXAI /></AnimatedSection>
+            <AnimatedSection><TransformedBusiness /></AnimatedSection>
+            <AnimatedSection><AIIndustrySolutions /></AnimatedSection>
+            <AnimatedSection><AITransformSection /></AnimatedSection>
+
             <Footer />
         </>
-    )
-}
+    );
+};
 
-export default DashboardPage
+export default DashboardPage;

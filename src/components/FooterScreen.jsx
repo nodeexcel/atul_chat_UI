@@ -1,7 +1,6 @@
 import Image from "next/image";
 import addressIcon from "../assets/addressIcon.svg";
 import gmailIcon from "../assets/gmailicon.svg";
-import phoneIcon from "../assets/phoneicon.svg";
 
 import tiktok from "../assets/socialIcons/tiktokIcons.svg";
 import social from "../assets/socialIcons/social.svg";
@@ -89,18 +88,7 @@ export default function Footer() {
                 {/* Contact Details */}
                 <div className="flex items-center justify-between">
                     <div className="flex flex-row gap-4 flex-wrap border-t border-gray-700 pt-6 mt-10">
-                        <div className="flex items-center gap-3">
-                            <Image
-                                src={phoneIcon}
-                                alt="Phone"
 
-                            />
-                            <div className="flex flex-col">
-                                <span className='text-white font-bold'>Phone</span>
-                                <span className="text-gray-300">+1 234 567 890</span>
-                            </div>
-
-                        </div>
                         <div className="flex items-center gap-3">
                             <Image
                                 src={gmailIcon}

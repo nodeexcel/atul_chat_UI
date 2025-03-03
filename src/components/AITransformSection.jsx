@@ -28,13 +28,7 @@ export default function AITransformSection() {
 
                     {/* Contact Information */}
                     <div className="flex flex-row gap-4 flex-wrap">
-                        <div className="flex items-center gap-3">
-                            <Image src={phoneIcon} alt="Phone" />
-                            <div className="flex flex-col">
-                                <span className='text-white font-bold'>Phone</span>
-                                <span className="text-gray-300">+1 234 567 890</span>
-                            </div>
-                        </div>
+
                         <div className="flex items-center gap-3">
                             <Image src={gmailIcon} alt="Gmail" />
                             <div className="flex flex-col">
@@ -51,14 +45,6 @@ export default function AITransformSection() {
                         </div>
                     </div>
 
-                    <div className="mt-8 text-center">
-                        <button className="bg-white text-black px-4 py-2 rounded-2xl text-lg shadow-md mt-4 transition-transform transform hover:scale-105 flex items-center gap-2">
-                            Free Consultation
-                            <span className='gradient-background p-1 text-white rounded-full'>
-                                <ChevronRight size={20} />
-                            </span>
-                        </button>
-                    </div>
                 </div>
 
                 {/* Right Side Illustration with Animation */}

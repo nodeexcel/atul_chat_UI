@@ -1,13 +1,27 @@
 "use client"; // Needed for Next.js App Router
 
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { fetchResponse } from "@/apis/api";
 import { Send, X, Maximize, Minimize } from "lucide-react";
 
-const QueryModal = ({ isOpen, setIsOpen }) => {
+const QueryModal = ({ isOpen, setIsOpen, generateResponse }) => {
   const [query, setQuery] = useState("");
   const [messages, setMessages] = useState([]);
-  const [isFullScreen, setIsFullScreen] = useState(false); // Full-screen state
+  const [isFullScreen, setIsFullScreen] = useState(false);
+
+  const messagesEndRef = useRef(null); // Ref for auto-scrolling
+
+  // Auto-scroll to bottom when messages update
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+
+  // When modal opens, show the initial response
+  useEffect(() => {
+    if (isOpen && generateResponse) {
+      setMessages([{ text: generateResponse, sender: "bot" }]);
+    }
+  }, [isOpen, generateResponse]);
 
   const handleSend = async () => {
     if (!query.trim()) return;
@@ -34,10 +48,9 @@ const QueryModal = ({ isOpen, setIsOpen }) => {
 
   return (
     <div
-      className={`fixed top-0 right-5 ${
-        isFullScreen ? "w-full h-full inset-0" : "w-[500px] h-[80vh]"
-      } bg-[#1E1E2E] rounded-lg shadow-lg text-white flex flex-col transition-all duration-300`}
-      style={{zIndex:10000}}
+      className={`fixed top-0 right-5 ${isFullScreen ? "w-full h-full inset-0" : "w-[500px] h-[80vh]"
+        } bg-[#1E1E2E] rounded-lg shadow-lg text-white flex flex-col transition-all duration-300`}
+      style={{ zIndex: 10000 }}
     >
       {/* Header */}
       <div className="flex justify-between items-center p-4 border-b border-gray-600">
@@ -69,14 +82,16 @@ const QueryModal = ({ isOpen, setIsOpen }) => {
           messages.map((msg, index) => (
             <div
               key={index}
-              className={`p-3 rounded-lg max-w-xs ${
-                msg.sender === "user" ? "bg-blue-600 ml-auto" : "bg-gray-700"
-              }`}
+              className={`p-3 rounded-lg max-w-lg ${isFullScreen ? "max-w-lg" : "max-w-xs"
+                } ${msg.sender === "user" ? "bg-blue-600 ml-auto" : "bg-gray-700"
+                }`}
             >
               {msg.text}
             </div>
           ))
         )}
+        {/* Empty div for auto-scroll */}
+        <div ref={messagesEndRef} />
       </div>
 
       {/* Input Box */}

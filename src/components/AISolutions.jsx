@@ -75,7 +75,7 @@ export default function AiSolutions() {
                             <p className="text-gray-300 text-sm mt-2 flex-grow mb-5">{solution.description}</p>
                             <div>
                                 <button className="mt-auto gradient-background text-white py-2 px-4 rounded-lg flex items-center gap-2">
-                                    Free Consultation <ChevronRight size={20} />
+                                    Book  Free Consultation <ChevronRight size={20} />
                                 </button>
                             </div>
                         </div>

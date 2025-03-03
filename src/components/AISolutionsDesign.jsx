@@ -91,7 +91,7 @@ export default function Slider() {
                                 </ul>
                                 <div className="flex justify-end">
                                     <button className="gradient-background text-white px-6 py-3 rounded-2xl text-lg shadow-md mt-4 transition-transform transform flex items-center gap-2 h-9">
-                                        Free Consultation <ChevronRight size={20} />
+                                        Book Free Consultation <ChevronRight size={20} />
                                     </button>
                                 </div>
                             </div>

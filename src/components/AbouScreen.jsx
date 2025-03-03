@@ -10,7 +10,7 @@ import Star2 from "../assets/AboutUs/Star2.png";
 
 export default function AboutUs() {
     return (
-        <section className="text-white py-16 px-6 md:px-16 lg:px-24 relative overflow-hidden" id="about" >
+        <section className="text-white pt-10 pb-28 px-6 md:px-16 lg:px-24 relative overflow-hidden " id="about">
             <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative">
                 {/* === IMAGE SECTION === */}
                 <motion.div
@@ -54,29 +54,20 @@ export default function AboutUs() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className="text-5xl font-bold mb-6 text-white">About Us</h2>
-                    <p className="text-gray-300 mb-4 font-bold">
-                        WaveX AI is your strategic ally in harnessing the power of artificial intelligence to
-                        deliver noticeable, measurable outcomes for your business. We are experts in
-                        Retrieval-Augmented Generation (RAG), Agentic AI, and Custom AI models that easily fit into your current operations.
-                        Our aim is to assist you to automate operations, enhance performance, and drive scalable growth.
+                    <h2 className="text-xl font-bold mb-3 text-white">Agentic AI Solutions</h2>
+                    <p className="text-gray-300 mb-4  ">
+                        Our Agentic AI Solutions provide businesses with intelligent agents that operate autonomously, learning from data and making strategic decisions. These AI agents work alongside human teams to enhance productivity, optimize workflows, and drive business growth.
                     </p>
-                    <p className="text-gray-300 mb-4 font-bold">
-                        In the data-driven era of today, companies require AI solutions that turn raw data
-                        into actionable insights. WaveX AI fills this gap by helping organizations streamline
-                        their AI journey. Our RAG-based solutions enable AI applications to have instant
-                        access to verified, domain-specific data, improving efficiency and decision-making.
+                    <h2 className="text-xl font-bold mb-3 text-white">Retrieval-Augmented Generation (RAG) Solutions</h2>
+                    <p className="text-gray-300 mb-4  ">
+                        Our RAG-Based AI Solutions utilize advanced AI techniques to retrieve and generate contextually relevant information, ensuring that AI-powered applications deliver accurate and meaningful insights. RAG technology enhances chatbots, content creation, research tools, and business intelligence systems.
                     </p>
-                    <p className="text-gray-300 mb-4 font-bold">
-                        Our Agentic AI offerings provide companies with smart agents that automate
-                        processes, optimize strategic operations, and integrate perfectly with human teams. Also, our AI models
-                        tailor-made to specific industries ensure that companies get personalized
-                        solutions that are specifically made for their industry and specific operational requirements.
-                    </p>
+
                     <button className="gradient-background text-white px-6 py-3 rounded-2xl text-lg shadow-md mt-4 transition-transform transform hover:scale-105 flex items-center gap-2">
-                        Free Consultation <ChevronRight size={20} />
+                        Know More About Us <ChevronRight size={20} />
                     </button>
                 </motion.div>
+
             </div>
 
 
