@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import addressIcon from "../../assets/addressIcon.svg";
 import gmailIcon from "../../assets/gmailicon.svg";

@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 import { Send, X, Maximize, Minimize } from "lucide-react";
 
-const SOCKET_SERVER_URL = "ws://wavexai.io/api/suggest-business"; // Flask WebSocket server
+const SOCKET_SERVER_URL = "wss://wavexai.io/api/suggest-business"; // Flask WebSocket server
 
 let socket;
 

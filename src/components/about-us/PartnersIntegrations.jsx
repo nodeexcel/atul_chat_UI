@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Group from "../../assets/AboutScreen/Group.svg";
 import chatgpt from "../../assets/AboutScreen/chatgpt.svg";

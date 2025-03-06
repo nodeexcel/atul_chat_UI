@@ -1,3 +1,5 @@
+
+"use client";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import AIDriven from "../assets/AISolutions/AI-Driven.png";

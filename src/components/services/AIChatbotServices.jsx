@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import chatBot from "../../assets/services/chatbot.svg";
 

@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import AnimatedSection from './animatedWrapper/AnimatedWrapper';
 import HomePage from "./HomePage";

@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import frameImg from "../../assets/services/Frame2.svg";
 

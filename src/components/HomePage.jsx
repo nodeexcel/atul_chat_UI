@@ -5,7 +5,7 @@ import BrushAI from "../assets/brushAI.svg";
 import QueryModal from "./QueryAIModal";
 import Loader from "./Loader";
 
-const SOCKET_SERVER_URL = "ws://wavexai.io/api/suggest-business"; // Flask WebSocket server
+const SOCKET_SERVER_URL = "wss://wavexai.io/api/suggest-business"; // Flask WebSocket server
 
 const stats = [
     { value: "40%", label: "Operational Cost Reduction" },

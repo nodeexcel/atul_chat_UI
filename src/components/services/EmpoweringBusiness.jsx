@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import HeaderFrame from "../../assets/services/HeaderFrame.svg";
 
