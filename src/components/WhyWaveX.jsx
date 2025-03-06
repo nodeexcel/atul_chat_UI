@@ -42,7 +42,7 @@ export default function WaveXAI() {
                         <div className=" overflow-hidden rounded-lg absolute bottom-[-7rem] right-0">
                             <Image
                                 src={Star2}
-                                alt={" "}
+                                alt={"star2"}
                                 height={70}
                                 width={70}
 
@@ -51,7 +51,7 @@ export default function WaveXAI() {
                         <div className=" overflow-hidden rounded-lg absolute left-[-6rem] top-0">
                             <Image
                                 src={Star1}
-                                alt={" "}
+                                alt={"star1"}
                                 height={90}
                                 width={90}
 

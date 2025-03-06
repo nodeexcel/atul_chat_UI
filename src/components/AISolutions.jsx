@@ -67,7 +67,7 @@ export default function AiSolutions() {
                             <div className="flex gap-2">
                                 <Image
                                     src={solution.iconImg}
-                                    alt=""
+                                    alt="icon"
                                     className="object-contain"
                                 />
                                 <h3 className="text-lg font-semibold">{solution.title}</h3>

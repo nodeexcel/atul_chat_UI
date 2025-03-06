@@ -32,14 +32,14 @@ export default function AboutUs() {
                     <div className=" overflow-hidden rounded-lg absolute bottom-[-6rem] right-20">
                         <Image
                             src={Star2}
-                            alt={" "}
+                            alt={"star2"}
 
                         />
                     </div>
                     <div className=" overflow-hidden rounded-lg absolute left-[-5rem] top-[-3.1rem]">
                         <Image
                             src={Star1}
-                            alt={" "}
+                            alt={"star1"}
 
                         />
 

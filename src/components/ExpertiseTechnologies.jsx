@@ -66,10 +66,10 @@ export default function ExpertiseTech() {
 
             <div className="flex w-full justify-between">
                 <div className="w-full h-[267px] overflow-hidden rounded-lg mb-4 absolute top-0">
-                    <Image src={Leftic} alt={" "} />
+                    <Image src={Leftic} alt={"left"} />
                 </div>
                 <div className="h-[267px] overflow-hidden rounded-lg mb-4 absolute right-10 top-5">
-                    <Image src={Rightic} alt={" "} />
+                    <Image src={Rightic} alt={"right"} />
                 </div>
             </div>
 

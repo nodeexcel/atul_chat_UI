@@ -86,8 +86,8 @@ export default function Footer() {
                 </div>
 
                 {/* Contact Details */}
-                <div className="flex items-center justify-between">
-                    <div className="flex flex-row gap-4 flex-wrap border-t border-gray-700 pt-6 mt-10">
+                <div className="flex items-center justify-between border-t border-gray-700 mt-6">
+                    <div className="flex flex-row gap-4 flex-wrap  mt-10">
 
                         <div className="flex items-center gap-3">
                             <Image

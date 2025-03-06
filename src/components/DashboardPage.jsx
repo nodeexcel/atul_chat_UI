@@ -12,7 +12,6 @@ import TransformedBusiness from './TransformedBusiness';
 import WaveXAI from './WhyWaveX';
 import AIIndustrySolutions from './AIIndustriesSolutions';
 import AITransformSection from './AITransformSection';
-import Footer from './FooterScreen';
 
 const DashboardPage = () => {
     return (
@@ -31,7 +30,6 @@ const DashboardPage = () => {
             <AnimatedSection><AIIndustrySolutions /></AnimatedSection>
             <AnimatedSection><AITransformSection /></AnimatedSection>
 
-            <Footer />
         </>
     );
 };

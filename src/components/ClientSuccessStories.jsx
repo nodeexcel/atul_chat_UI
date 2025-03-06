@@ -42,14 +42,14 @@ export default function ClientSuccessStories() {
                 <div className="w-full h-[267px] overflow-hidden rounded-lg mb-4 absolute top-0 ">
                     <Image
                         src={Leftic}
-                        alt={" "}
+                        alt={"left"}
 
                     />
                 </div>
                 <div className="h-[267px] overflow-hidden rounded-lg mb-4 absolute right-10">
                     <Image
                         src={Rightic}
-                        alt={" "}
+                        alt={"right"}
 
                     />
                 </div>

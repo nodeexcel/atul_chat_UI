@@ -1,11 +1,11 @@
-'use client'
-import { useState, useEffect } from "react";
+"use client";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import GroupStar from "../assets/HomePage/GroupStar.png";
 import BrushAI from "../assets/brushAI.svg";
 import QueryModal from "./QueryAIModal";
-import { fetchResponse } from "@/apis/api";
 import Loader from "./Loader";
+
+const SOCKET_SERVER_URL = "ws://116.202.210.102:3333/suggest-business"; // Flask WebSocket server
 
 const stats = [
     { value: "40%", label: "Operational Cost Reduction" },
@@ -20,17 +20,16 @@ const useTypewriter = (text, speed = 100, delay = 1000, shadowDuration = 500) =>
     const [index, setIndex] = useState(0);
     const [showShadow, setShowShadow] = useState(false);
 
-
     useEffect(() => {
         const timeout = setTimeout(() => {
             if (index < text.length) {
                 setDisplayText((prev) => prev + text[index]);
                 setIndex(index + 1);
             } else {
-                setShowShadow(true); // Show shadow when text completes
+                setShowShadow(true);
 
                 setTimeout(() => {
-                    setShowShadow(false); // Remove shadow after some time
+                    setShowShadow(false);
                     setDisplayText("");
                     setIndex(0);
                 }, shadowDuration + delay);
@@ -43,50 +42,66 @@ const useTypewriter = (text, speed = 100, delay = 1000, shadowDuration = 500) =>
     return { displayText, showShadow };
 };
 
-
 const HomePage = () => {
     const [websiteUrl, setWebsiteUrl] = useState("");
     const [isOpen, setIsOpen] = useState(false);
     const [generateResponse, setGenerateResponse] = useState("");
     const [loading, setLoading] = useState(false);
+    const ws = useRef(null);
 
-
-    // Typewriter effect for tagline
     const { displayText, showShadow } = useTypewriter("See How AI Can Transform Your Business in 10 Seconds!", 100, 1500, 700);
 
-    const handleSend = async () => {
-        setLoading(true);
+    useEffect(() => {
+        // Initialize WebSocket connection
+        ws.current = new WebSocket(SOCKET_SERVER_URL);
+
+        ws.current.onopen = () => console.log("WebSocket connected");
+        ws.current.onclose = () => console.log("WebSocket disconnected");
+        ws.current.onerror = (error) => console.log("WebSocket error:", error);
+
+        ws.current.onmessage = (event) => {
+            const data = JSON.parse(event.data);
+
+            if (data.data) {
+                console.log(data.data, "------000");
+                setGenerateResponse((prev) => prev + data.data); // Append response progressively
+                setLoading(false); // Stop loading when done
+                setIsOpen(true);
+            }
+
+
+        };
+
+
+        return () => {
+            if (ws.current) ws.current.close();
+        };
+    }, []);
+
+    const handleSend = () => {
         if (!websiteUrl.trim()) return;
-        const result = await fetchResponse(websiteUrl);
-        if (result?.response) {
-            setGenerateResponse(result?.response);
-            setIsOpen(true);
-        }
-        setLoading(false);
+        setLoading(true);
+
+        // Send website URL to Flask WebSocket
+        ws.current.send(JSON.stringify({ query: websiteUrl }));
     };
 
     return (
         <div className="pt-10" id="home" style={{ background: 'rgba(1, 15, 49, 1)' }}>
             <div className="flex flex-col items-center text-center">
-
                 <h2 className="gradient-text text-[40px] md:text-[56px] font-bold leading-[64.8px] text-center font-space-grotesk mt-2">
                     AI Is Not the Future, It's now!
                 </h2>
 
-                {/* Typewriter Effect */}
-                <p
-                    className={`mt-4 font-bold text-white text-center max-w-2xl text-2xl transition-shadow ${showShadow ? "shadow-lg text-glow" : ""
-                        }`}
-                >
+                <p className={`mt-4 font-bold text-white text-center max-w-2xl text-2xl transition-shadow ${showShadow ? "shadow-lg text-glow" : ""}`}>
                     {displayText} <span className="animate-blink">|</span>
                 </p>
-
 
                 <div className="flex items-center justify-center gap-4 w-full mt-4">
                     <input
                         type="text"
                         placeholder="Paste Your Website URL"
-                        className="border-2 overflow-hidden w-full max-w-md h-[48px] flex items-center px-4 bg-black text-white  "
+                        className="border-2 overflow-hidden w-full max-w-md h-[48px] flex items-center px-4 bg-black text-white"
                         value={websiteUrl}
                         onChange={(e) => setWebsiteUrl(e.target.value)}
                         style={{
@@ -102,7 +117,6 @@ const HomePage = () => {
                         <Image src={BrushAI} alt={"Brush ai"} />
                     </button>
                 </div>
-
             </div>
 
             {/* AI Response Modal */}
