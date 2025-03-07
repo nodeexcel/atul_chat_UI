@@ -31,8 +31,10 @@ const Navbar = () => {
             className="h-[93px] bg-white text-center flex flex-col items-center px-4 md:px-10 lg:px-20">
 
             <nav className="w-full flex justify-between items-center py-4 h-[93px]">
-                <div className="flex justify-center items-center gap-3">
-                    <Image src={websiteLogo} style={{ height: "72px", width: "auto" }} alt="logo" />
+                <div className="flex justify-center items-center gap-3 cursor-pointer" onClick={() => {
+                    router.push("/")
+                }}>
+                    <Image src={websiteLogo} style={{ height: "100px", width: "auto" }} alt="logo" />
                 </div>
 
                 {/* Desktop Menu */}

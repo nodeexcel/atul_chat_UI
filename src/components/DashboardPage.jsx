@@ -27,8 +27,8 @@ const DashboardPage = () => {
             <AnimatedSection><LeadingPlatforms /></AnimatedSection>
             <AnimatedSection><ClientSuccessStories /></AnimatedSection>
             <AnimatedSection><WaveXAI /></AnimatedSection>
-            <AnimatedSection><TransformedBusiness /></AnimatedSection>
-            <AnimatedSection><AIIndustrySolutions /></AnimatedSection>
+            {/* <AnimatedSection><TransformedBusiness /></AnimatedSection> */}
+            {/* <AnimatedSection><AIIndustrySolutions /></AnimatedSection> */}
             <AnimatedSection><AITransformSection /></AnimatedSection>
 
         </>

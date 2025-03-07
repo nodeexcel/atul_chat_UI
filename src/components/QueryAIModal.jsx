@@ -2,6 +2,8 @@
 
 import { useEffect, useState, useRef } from "react";
 import { Send, X, Maximize, Minimize } from "lucide-react";
+import { jsPDF } from "jspdf";
+
 
 const SOCKET_SERVER_URL = "wss://wavexai.io/api/suggest-business"; // Flask WebSocket server
 
@@ -104,6 +106,33 @@ const QueryModal = ({ isOpen, setIsOpen, generateResponse, setGenerateResponse }
       handleSend();
     }
   };
+  const handleDownloadPDF = () => {
+    const doc = new jsPDF();
+    let y = 10; // Vertical position for text
+    const marginLeft = 10; // Left margin
+    const pageHeight = doc.internal.pageSize.height; // Page height for pagination
+
+    messages.forEach((msg, index) => {
+      const sender = msg.sender === "user" ? "You" : "Bot";
+      const messageText = `${sender}: ${msg.text}`;
+
+      // Split text into multiple lines that fit within the page width
+      const textLines = doc.splitTextToSize(messageText, 180);
+      const textHeight = textLines.length * 7; // Approximate height of wrapped text
+
+      // Check if adding this message exceeds page height, if so, add a new page
+      if (y + textHeight > pageHeight - 20) {
+        doc.addPage();
+        y = 10; // Reset y position for the new page
+      }
+
+      doc.text(textLines, marginLeft, y);
+      y += textHeight + 5; // Move y down for next message
+    });
+
+    doc.save("chat_history.pdf");
+  };
+
 
   if (!isOpen) return null;
 
@@ -116,6 +145,9 @@ const QueryModal = ({ isOpen, setIsOpen, generateResponse, setGenerateResponse }
       <div className="flex justify-between items-center p-4 border-b border-gray-600">
         <h2 className="text-lg font-semibold">Asking about Data Privacy</h2>
         <div className="flex space-x-3">
+          <button onClick={handleDownloadPDF} className="text-gray-400 hover:text-white">
+            Download 📄
+          </button>
           <button onClick={() => setIsFullScreen(!isFullScreen)} className="text-gray-400 hover:text-white">
             {isFullScreen ? <Minimize size={20} /> : <Maximize size={20} />}
           </button>

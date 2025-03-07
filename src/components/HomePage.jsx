@@ -56,8 +56,15 @@ const HomePage = () => {
         ws.current = new WebSocket(SOCKET_SERVER_URL);
 
         ws.current.onopen = () => console.log("WebSocket connected");
-        ws.current.onclose = () => console.log("WebSocket disconnected");
-        ws.current.onerror = (error) => console.log("WebSocket error:", error);
+        ws.current.onclose = () => {
+            console.log("WebSocket disconnected");
+            setLoading(false);
+
+        }
+        ws.current.onerror = (error) => {
+            console.log("WebSocket error:", error);
+            setLoading(false)
+        }
 
         ws.current.onmessage = (event) => {
             const data = JSON.parse(event.data);
