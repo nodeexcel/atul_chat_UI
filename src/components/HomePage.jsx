@@ -63,7 +63,6 @@ const HomePage = () => {
             const data = JSON.parse(event.data);
 
             if (data.data) {
-                console.log(data.data, "------000");
                 setGenerateResponse((prev) => prev + data.data); // Append response progressively
                 setLoading(false); // Stop loading when done
                 setIsOpen(true);
@@ -120,7 +119,7 @@ const HomePage = () => {
             </div>
 
             {/* AI Response Modal */}
-            <QueryModal isOpen={isOpen} setIsOpen={setIsOpen} generateResponse={generateResponse} />
+            <QueryModal isOpen={isOpen} setIsOpen={setIsOpen} generateResponse={generateResponse} setGenerateResponse={setGenerateResponse} />
 
             {/* Footer Text */}
             <div className="mt-4 text-gray-700">

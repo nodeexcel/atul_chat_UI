@@ -7,11 +7,12 @@ const SOCKET_SERVER_URL = "wss://wavexai.io/api/suggest-business"; // Flask WebS
 
 let socket;
 
-const QueryModal = ({ isOpen, setIsOpen, generateResponse }) => {
+const QueryModal = ({ isOpen, setIsOpen, generateResponse, setGenerateResponse }) => {
   const [query, setQuery] = useState("");
   const [messages, setMessages] = useState([]);
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
+  const [isWaitingForResponse, setIsWaitingForResponse] = useState(false); // New state for disabling send button
   const messagesEndRef = useRef(null);
   useEffect(() => {
     // Connect to WebSocket server
@@ -47,7 +48,7 @@ const QueryModal = ({ isOpen, setIsOpen, generateResponse }) => {
           return [...newMessages];
         });
       }
-
+      console.log(data, "0000");
       if (data.done) {
         setMessages((prev) => {
           let newMessages = [...prev];
@@ -56,6 +57,7 @@ const QueryModal = ({ isOpen, setIsOpen, generateResponse }) => {
           }
           return newMessages;
         });
+        setIsWaitingForResponse(false);
       }
     };
 
@@ -89,6 +91,7 @@ const QueryModal = ({ isOpen, setIsOpen, generateResponse }) => {
 
     setMessages([...messages, { text: query, sender: "user" }]);
     setIsTyping(true);
+    setIsWaitingForResponse(true);
 
     socket.send(JSON.stringify({ query }));
 
@@ -116,7 +119,12 @@ const QueryModal = ({ isOpen, setIsOpen, generateResponse }) => {
           <button onClick={() => setIsFullScreen(!isFullScreen)} className="text-gray-400 hover:text-white">
             {isFullScreen ? <Minimize size={20} /> : <Maximize size={20} />}
           </button>
-          <button onClick={() => setIsOpen(false)} className="text-gray-400 hover:text-white">
+          <button onClick={() => {
+            setMessages([])
+            setGenerateResponse('')
+            setIsOpen(false)
+          }}
+            className="text-gray-400 hover:text-white">
             <X size={24} />
           </button>
         </div>
@@ -159,7 +167,7 @@ const QueryModal = ({ isOpen, setIsOpen, generateResponse }) => {
           className="flex-1 p-2 rounded-lg bg-gray-800 text-white focus:outline-none"
           placeholder="Type your question..."
         />
-        <button onClick={handleSend} className="ml-2 p-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition">
+        <button onClick={handleSend} className="ml-2 p-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition" disabled={isWaitingForResponse}>
           <Send size={20} />
         </button>
       </div>
